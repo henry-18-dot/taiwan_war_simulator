@@ -1,9 +1,9 @@
 # taiwan_war_simulator
 
-面向 **战争策略回合制游戏** 的 Codex 协作开发骨架。
-目标是让 AI 和人类在「规则清晰、数据可调、回放可验」的流程里稳定迭代。
+A Codex collaboration scaffold for a **turn-based war strategy game**.
+The goal is to let AI and humans iterate reliably within a workflow where rules are clear, data is tunable, and replays are verifiable.
 
-## 目录结构（针对回合制战争策略）
+## Directory Structure (for Turn-Based War Strategy)
 
 ```text
 .
@@ -11,50 +11,50 @@
 ├── README.md
 ├── docs/
 │   ├── design/
-│   │   ├── game_design_document.md      # 核心体验、胜负、阵营、资源、回合循环
-│   │   └── technical_design.md          # 模块边界、状态机、存档/回放
+│   │   ├── game_design_document.md      # Core experience, victory/defeat, factions, resources, turn loop
+│   │   └── technical_design.md          # Module boundaries, state machine, save/replay
 │   ├── narrative/
-│   │   └── worldbuilding.md             # 势力背景、事件线、政治叙事
+│   │   └── worldbuilding.md             # Faction background, event arcs, political narrative
 │   ├── prompts/
-│   │   └── codex_prompting.md           # AI 任务模板（系统/战役/AI/数值）
+│   │   └── codex_prompting.md           # AI task templates (systems/campaign/AI/balance)
 │   ├── tasks/
-│   │   └── backlog.md                   # 任务与版本里程碑
+│   │   └── backlog.md                   # Tasks and version milestones
 │   └── logs/
-│       └── devlog.md                    # 每次迭代决策记录
+│       └── devlog.md                    # Decision log for each iteration
 └── tools/
     └── ai/
-        └── README.md                    # 内容生成、平衡校验、战报分析脚本
+        └── README.md                    # Content generation, balance validation, and battle report analysis scripts
 ```
 
-## 建议的代码与数据分层（下一步可按此创建）
+## Suggested Code and Data Layers (can be created next)
 
 ```text
 src/
-├── core/             # turn 状态机、事件总线、随机种子
-├── campaign/         # 战役进度、胜负结算、章节目标
-├── combat/           # 命中/穿甲/士气/地形/补给结算
-├── ai/               # 战术 AI、战略 AI、行动评分
-├── map/              # 地块、视野、路径、控制区(ZOC)
-├── economy/          # 资源、生产、维修、补给线
-└── diplomacy/        # 关系、停火、援助、制裁
+├── core/             # Turn state machine, event bus, random seed
+├── campaign/         # Campaign progress, victory resolution, chapter objectives
+├── combat/           # Hit/penetration/morale/terrain/supply resolution
+├── ai/               # Tactical AI, strategic AI, action scoring
+├── map/              # Tiles, vision, pathing, zones of control (ZOC)
+├── economy/          # Resources, production, repairs, supply lines
+└── diplomacy/        # Relations, ceasefires, aid, sanctions
 
 data/
-├── units/            # 单位模板（机动、火力、装甲、补给消耗）
-├── factions/         # 阵营属性与科技树
-├── scenarios/        # 剧本地图、初始部署、胜负条件
-├── balance/          # 版本化平衡参数
-└── localization/     # 多语言文本
+├── units/            # Unit templates (mobility, firepower, armor, supply consumption)
+├── factions/         # Faction attributes and tech trees
+├── scenarios/        # Scenario maps, starting deployments, victory conditions
+├── balance/          # Versioned balance parameters
+└── localization/     # Multilingual text
 
 tests/
-├── deterministic/    # 固定 seed 的可复现测试
-├── simulation/       # 多回合自动对战回归
-└── rules/            # 战斗/补给/胜负规则单测
+├── deterministic/    # Reproducible tests with fixed seeds
+├── simulation/       # Multi-turn automated battle regressions
+└── rules/            # Unit tests for combat/supply/victory rules
 ```
 
-## 开发顺序建议
+## Suggested Development Order
 
-1. 先填 `docs/design/game_design_document.md` 的「回合循环 + 胜负 + 关键系统」。
-2. 再做 `docs/design/technical_design.md` 的「状态流与数据契约」。
-3. 通过 `docs/tasks/backlog.md` 拆到可在 1~2 天完成的小任务。
-4. 每次规则改动必须补对应测试（至少 deterministic + rules）。
-5. 在 `docs/logs/devlog.md` 记录“为什么改、改了什么、结果如何”。
+1. First fill out the "turn loop + victory/defeat + key systems" sections in `docs/design/game_design_document.md`.
+2. Then define the "state flow and data contracts" in `docs/design/technical_design.md`.
+3. Break work down into tasks that can be finished in 1 to 2 days via `docs/tasks/backlog.md`.
+4. Every rule change must be accompanied by corresponding tests, at minimum `deterministic` and `rules`.
+5. Record why a change was made, what changed, and the result in `docs/logs/devlog.md`.

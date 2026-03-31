@@ -1,9 +1,9 @@
-# Backlog（Turn-based War Strategy）
+# Backlog (Turn-Based War Strategy)
 
-| ID | 模块 | 任务 | 优先级 | 状态 | 验收标准 |
+| ID | Module | Task | Priority | Status | Acceptance Criteria |
 |---|---|---|---|---|---|
-| TW-001 | Core | 搭建回合状态机与动作队列 | P0 | todo | 可执行情报/指令/结算三阶段 |
-| TW-002 | Combat | 实现基础战斗公式（命中/穿甲/士气） | P0 | todo | 规则单测通过 |
-| TW-003 | Economy | 实现补给线与中断惩罚 | P0 | todo | deterministic 测试可复现 |
-| TW-004 | AI | 战术 AI 行动评分首版 | P1 | todo | 50 局模拟可稳定完成回合 |
-| TW-005 | Scenario | 首张战役地图与胜负条件 | P1 | todo | 20 回合可跑通胜负判定 |
+| TW-001 | Core | Build the turn state machine and action queue | P0 | todo | The intel / orders / resolution three-phase flow can be executed |
+| TW-002 | Combat | Implement the base combat formulas (hit / penetration / morale) | P0 | todo | Rule unit tests pass |
+| TW-003 | Economy | Implement supply lines and disruption penalties | P0 | todo | Deterministic tests are reproducible |
+| TW-004 | AI | First version of tactical AI action scoring | P1 | todo | 50 simulations can complete turns reliably |
+| TW-005 | Scenario | First campaign map and victory conditions | P1 | todo | Victory resolution can run through 20 turns |

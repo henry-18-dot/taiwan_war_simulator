@@ -1,17 +1,17 @@
-# Worldbuilding（战役叙事）
+# Worldbuilding (Campaign Narrative)
 
-## 阵营设定
-- 阵营 A：战略目标、资源短板、外交处境
-- 阵营 B：战略目标、资源短板、外交处境
-- 中立势力：触发条件、可交易资源、立场变化规则
+## Faction Setup
+- Faction A: strategic goals, resource shortages, diplomatic situation
+- Faction B: strategic goals, resource shortages, diplomatic situation
+- Neutral forces: trigger conditions, tradable resources, stance-shift rules
 
-## 战役时间线
-- T0：冲突爆发
-- T1：关键港口争夺
-- T2：国际干预与制裁升级
-- T3：停火窗口或全面升级
+## Campaign Timeline
+- T0: outbreak of conflict
+- T1: struggle for key ports
+- T2: international intervention and escalating sanctions
+- T3: ceasefire window or full escalation
 
-## 事件系统约束
-- 事件必须可追踪触发条件（回合数/据点占领/资源阈值）
-- 事件效果要有明确持续时间与叠加规则
-- 避免“纯随机大事件”直接决定胜负
+## Event System Constraints
+- Events must have traceable trigger conditions (turn count / strongpoint capture / resource thresholds)
+- Event effects must have explicit durations and stacking rules
+- Avoid letting "purely random major events" directly decide victory or defeat

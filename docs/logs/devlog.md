@@ -1,6 +1,6 @@
 # Dev Log
 
 ## 2026-03-31
-- 将项目骨架从通用模板调整为“战争策略回合制”专用结构。
-- 明确核心回合循环：情报 -> 指令 -> 结算 -> 回合结束。
-- 补充了补给、士气、控制区（ZOC）、确定性回放等关键约束。
+- Adjusted the project scaffold from a generic template to a structure tailored for a turn-based war strategy game.
+- Clarified the core turn loop: intel -> orders -> resolution -> end of turn.
+- Added key constraints covering supply, morale, zones of control (ZOC), and deterministic replays.

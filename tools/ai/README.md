@@ -1,11 +1,11 @@
-# AI Tools（战争策略回合制）
+# AI Tools (Turn-Based War Strategy)
 
-此目录用于存放 AI 辅助脚本：
-- 战报摘要（从 EventLog 生成回合复盘）
-- 平衡检测（批量模拟后统计胜率、回合长度、资源曲线）
-- 配置校验（单位参数、地形修正、胜负条件合法性）
+This directory is for AI-assisted scripts:
+- Battle report summaries (generate turn retrospectives from the EventLog)
+- Balance checks (run batch simulations and report win rate, turn length, and resource curves)
+- Configuration validation (unit parameters, terrain modifiers, and victory-condition validity)
 
-建议规范：
-1. 脚本输入输出采用 JSON/CSV，便于流水线调用。
-2. 所有模拟脚本必须支持 `--seed`，保证可复现。
-3. 输出中要包含版本号与参数快照，便于对比回归。
+Suggested conventions:
+1. Script inputs and outputs should use JSON/CSV for easy pipeline integration.
+2. All simulation scripts must support `--seed` to guarantee reproducibility.
+3. Output should include a version number and parameter snapshot to make regression comparisons easier.
