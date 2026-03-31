@@ -56,5 +56,20 @@ tests/
 1. First fill out the "turn loop + victory/defeat + key systems" sections in `docs/design/game_design_document.md`.
 2. Then define the "state flow and data contracts" in `docs/design/technical_design.md`.
 3. Break work down into tasks that can be finished in 1 to 2 days via `docs/tasks/backlog.md`.
-4. Every rule change must be accompanied by corresponding tests, at minimum `deterministic` and `rules`.
-5. Record why a change was made, what changed, and the result in `docs/logs/devlog.md`.
+4. Before deeper rule work, set up a minimal test harness plus `tests/deterministic/` and `tests/rules/`.
+5. Every rule change must be accompanied by corresponding tests, at minimum `deterministic` and `rules`.
+6. Record why a change was made, what changed, and the result in `docs/logs/devlog.md`.
+
+## Workflow Expectations
+
+- Keep backlog items scoped to 1 to 2 days of focused work.
+- If a change affects turn logic, combat, supply, or victory rules, update:
+  - `docs/design/game_design_document.md`
+  - `docs/design/technical_design.md`
+  - `docs/tasks/backlog.md`
+- Deterministic tests verify that the same seed and the same actions produce the same outcome.
+- Rules tests verify isolated gameplay behavior, thresholds, and edge cases.
+- Each notable change should add a devlog entry with:
+  - why the change was made
+  - what changed
+  - the result

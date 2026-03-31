@@ -83,6 +83,27 @@ The design should support a clean prototype with minimal implementation burden. 
 * explicit enums over implicit strings where practical
 * readable payloads over over-abstracted schemas
 
+### 2.6 Test Strategy Split
+
+The prototype should treat deterministic verification and rules verification as separate but mandatory layers for gameplay changes.
+
+**Deterministic tests**
+
+* live under `tests/deterministic/`
+* verify that the same seed, starting state, content definitions, and ordered actions produce the same outputs
+* focus on replay safety, reproducibility, and stable regression coverage
+
+**Rules tests**
+
+* live under `tests/rules/`
+* verify isolated gameplay behavior such as formulas, thresholds, clamping, gating, and edge cases
+* focus on rule correctness independent of larger scenario flow
+
+**Workflow requirement**
+
+* any change to turn logic, combat, supply, or victory evaluation should update both test layers
+* tests should be added before or with the implementation slice, not deferred to a later balancing pass
+
 ---
 
 ## 3. High-Level State Flow

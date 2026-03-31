@@ -8,6 +8,17 @@
 
 ---
 
+## Workflow Note
+
+- Read this document before changing gameplay rules.
+- If a change affects turn logic, combat, supply, or victory rules, update this document together with `docs/design/technical_design.md` and `docs/tasks/backlog.md`.
+- Every rule change must be covered by:
+  - at least one deterministic test proving the same seed and actions produce the same result
+  - at least one rules-focused test covering isolated rule behavior or edge cases
+- Log notable rule decisions in `docs/logs/devlog.md` using the fields `Why`, `What Changed`, and `Result`.
+
+---
+
 ## 1. Design Goals
 This document section defines the core playable structure for a **Flash-style, minimalist UI, single-player, turn-based strategy narrative game** in which **1 turn = 1 day**.
 
@@ -554,4 +565,3 @@ This design slice defines the playable backbone of the game:
 - A **minimal but strongly interactive system set** suitable for a clean Flash-style strategy UI
 
 The result should feel readable, tense, and replayable, with each day pushing the player closer to either controlled coercive success or uncontrolled strategic failure.
-
