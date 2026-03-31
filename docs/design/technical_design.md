@@ -950,3 +950,32 @@ The intended result is a prototype architecture that is:
 * easy to balance
 * readable to implement
 * extensible enough for future scenario growth without overengineering the first build
+
+---
+
+## 2026-03-31 Prototype v0.2 Implementation Notes
+
+当前实现提供一个可运行的 `GameState` 单一事实源与确定性回合推进：
+
+- 代码入口：`src/twsim/cli.py`
+- 规则引擎：`src/twsim/engine.py`
+- 数据内容：`src/twsim/content.py`
+- 数据结构：`src/twsim/models.py`
+
+### Runtime Contracts (Implemented)
+
+- `GameState`
+  - `day`, `max_days`, `phase`, `ended`, `ending`, `seed`, `stats`, `history`
+- `Stats`
+  - 六项核心数值，统一 `0..100` clamp
+- `TurnRecord`
+  - 每日动作、AI 响应、事件、摘要、结算后快照
+
+### Deterministic Resolution
+
+每回合使用固定随机源：`Random(seed + day * 97)`，确保同初始 seed 与同操作序列可复现。
+
+### Rule Safety
+
+- 行动提交必须是三槽位合法组合，否则抛出 `RuleError`。
+- 终局判定在每回合后执行，并在超时时强制给出收束结局。

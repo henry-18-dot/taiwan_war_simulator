@@ -1,17 +1,37 @@
 # Worldbuilding (Campaign Narrative)
 
-## Faction Setup
-- Faction A: strategic goals, resource shortages, diplomatic situation
-- Faction B: strategic goals, resource shortages, diplomatic situation
-- Neutral forces: trigger conditions, tradable resources, stance-shift rules
+## 场景定位
+- 本作聚焦台海危机升级后的 20 至 40 天。
+- 玩家扮演中方战略决策层，目标是在有限时间内通过施压、封控与信息优势迫使对手让步。
+- 叙事重点是“控制升级”而非“无条件全面占领”。
+- 大多数关键回合表现为航运秩序、港口运行、外部介入与社会承压的变化，不是单纯抢滩。
 
-## Campaign Timeline
-- T0: outbreak of conflict
-- T1: struggle for key ports
-- T2: international intervention and escalating sanctions
-- T3: ceasefire window or full escalation
+## 阵营设定
+- 玩家方：中方联合施压体系，优势在于火力、封控、信息战与工业后端整合。
+- 对手方：台湾防御体系，优势在于守势、地理纵深、外部支持与拖延能力。
+- 外部力量：美国、日本与其他国际行为体，主要通过介入风险、制裁、护航与外交施压影响战局。
 
-## Event System Constraints
-- Events must have traceable trigger conditions (turn count / strongpoint capture / resource thresholds)
-- Event effects must have explicit durations and stacking rules
-- Avoid letting "purely random major events" directly decide victory or defeat
+## 战役节奏
+- T0 对峙：高强度演训、法律战、信息战与灰区海上行动增加。
+- T1 压制：导弹、空海封控、网络攻击与港口扰动成为主线。
+- T2 危机：外部介入风险抬升，双方围绕补给、制空与航运秩序博弈。
+- T3 战前边缘：若局势继续升级，才进入夺控港口、空降突击或有限登陆的高风险阶段。
+
+## 设计抽象
+- 不按真实番号逐单位还原，按能力层组织资源。
+- 中方强项应表现为体系整合，不只是舰艇或飞机数量。
+- 两栖登陆应视为后期高门槛选项，不应成为默认主线。
+- 第三方介入应作为持续压力源，而不是单次随机判定。
+
+## 对应资料
+- 中方资源池见 `docs/narrative/prc_resource_pool.md`。
+- 台湾资源池见 `docs/narrative/taiwan_resource_pool.md`。
+- 中方关键变量见 `docs/narrative/strategic_variable_matrix.md`。
+- 台湾关键变量见 `docs/narrative/taiwan_defense_variables.md`。
+- 外国干涉资源见 `docs/narrative/foreign_intervention_pool.md`。
+- 外国干涉变量见 `docs/narrative/foreign_intervention_variables.md`。
+
+## 事件系统约束
+- 事件必须有可追踪触发条件，例如回合数、风险阈值、港口状态或战备等级。
+- 事件效果必须写明持续时间、叠加规则与解除条件。
+- 重大事件不能只靠纯随机直接决定胜负，必须经过系统量化与阶段检定。

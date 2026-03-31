@@ -565,3 +565,32 @@ This design slice defines the playable backbone of the game:
 - A **minimal but strongly interactive system set** suitable for a clean Flash-style strategy UI
 
 The result should feel readable, tense, and replayable, with each day pushing the player closer to either controlled coercive success or uncontrolled strategic failure.
+
+---
+
+## 2026-03-31 Prototype v0.2 Rules Snapshot (Playable CLI)
+
+为支持“立即可玩”目标，当前版本落地了最小闭环规则：
+
+- 回合长度：20 天（可配置）。
+- 每日强制选择 3 个行动：`primary` + `secondary` + `info` 各 1 个。
+- 行动、AI 响应、事件共同影响六项核心数值：
+  - Tension
+  - Pressure Effect
+  - International Risk
+  - Domestic Strain
+  - Opponent Stability
+  - Readiness
+- 冲突阶段由 Tension 阈值推进：
+  - `<40`: STANDOFF
+  - `40-64`: PRESSURE
+  - `65-84`: CRISIS
+  - `>=85`: PRE_WAR
+- 终局判定优先级：
+  1. 国际失控升级
+  2. 内部承压失衡
+  3. 威慑达成
+  4. 高成本达成
+  5. 超时后冻结优势 / 战略失效
+
+该版本强调“可玩 + 可复现 + 可扩展”，后续再逐步加入更细化战术战斗与补给系统。
