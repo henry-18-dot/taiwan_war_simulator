@@ -53,3 +53,9 @@ Use this template for every notable change:
 - Why: 虽然背景骨架已经补齐，但原型内容层仍接近占位状态，行动、事件与对手反馈还不足以体现台海危机的真实博弈结构。
 - What Changed: 扩充 `src/twsim/content.py` 中的行动池、事件池与终局描述，加入封港、联合火力、无人机袭扰、民船征用、法理通告、市场稳定等内容；同时为 AI 响应补充本地化标签，并在测试中锁定扩充后的行动规模与日报文本表现。
 - Result: CLI 原型现在能更直接体现中方施压、台湾韧性与外国干涉的多层互动，回合反馈也比原先更贴近场景设定。
+
+## 2026-04-01
+### Visual Prompt Export for Pixel-Style Realtime Rendering
+- Why: 需要把“Flash 感实时 2D 像素风 + 选项前后持续反馈动画”的视觉要求沉淀为可复用的统一提示词，供前端、美术与工具链一致使用。
+- What Changed: 新增 `src/twsim/visual_style.py` 输出标准化视觉提示词；CLI 增加 `--visual-style-prompt` 导出入口；补充对应测试验证提示词关键约束与命令行输出；README 增加使用说明。
+- Result: 项目现在可一键导出统一视觉规范文本，确保地图/单位/UI 分层、行动动画链路与交互反馈要求在协作中保持一致。

@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import argparse
+
 from twsim.engine import RuleError, available_actions, ending_label, resolve_turn
 from twsim.models import ActionSlot, GameState
+from twsim.visual_style import visual_style_prompt
 
 
 def choose(slot: ActionSlot) -> str:
@@ -49,5 +52,25 @@ def run_game(seed: int = 7, max_days: int = 20) -> GameState:
     return state
 
 
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Strait: Critical Days CLI")
+    parser.add_argument("--seed", type=int, default=7, help="随机种子")
+    parser.add_argument("--max-days", type=int, default=20, help="最大天数")
+    parser.add_argument(
+        "--visual-style-prompt",
+        action="store_true",
+        help="输出游戏视觉与渲染风格提示词（用于美术/UI/前端协作）",
+    )
+    return parser
+
+
+def main() -> None:
+    args = build_parser().parse_args()
+    if args.visual_style_prompt:
+        print(visual_style_prompt())
+        return
+    run_game(seed=args.seed, max_days=args.max_days)
+
+
 if __name__ == "__main__":
-    run_game()
+    main()

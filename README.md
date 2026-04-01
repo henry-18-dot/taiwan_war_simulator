@@ -42,3 +42,13 @@ pytest
 测试结构：
 - `tests/deterministic/`：可复现与回放一致性
 - `tests/rules/`：规则阈值、组合合法性和终局判定
+
+## 视觉风格提示词导出
+
+如需给前端/美术/AI 工具使用统一风格提示词：
+
+```bash
+python -m twsim.cli --visual-style-prompt
+```
+
+该输出已内置：地图分区交互、单位与 UI 像素风规则、以及“选择选项时/后都要有动作或持续动画”的强制反馈约束。
